@@ -1,0 +1,59 @@
+@import './../node_modules/bootstrap/less/bootstrap';
+@import (inline) './../node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css';
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+body {
+  background-color: #333;
+  color: #fff;
+}
+
+.transition-ease, .ng-animate {
+  transition-duration: 1000ms;
+  transition-timing-function: ease-out;
+  transition-property: all;
+}
+
+ul.nav {
+  li {
+    a {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.wheel-container {
+  width: 700px;
+  height: 700px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  //.marker {
+  //  top: 10px;
+  //  left: 250px;
+  //  position: absolute;
+  //}
+
+  .wheel {
+    position: relative;
+    width: 700px;
+    height: 700px;
+
+    svg {
+      &.wheel-transition {
+        transition: 5s cubic-bezier(0, .99, 1, 1) transform;
+      }
+    }
+
+    &.zoom {
+
+      width: 2000px;
+      height: 1400px;
+      left: -500px;
+      //top: 700px;
+    }
+  }
+}
+
