@@ -10,21 +10,22 @@ body {
   color: #fff;
 }
 
-.transition-ease, .ng-animate {
+.panel-body {
+  color: @btn-default-color;
+}
+
+.transition-ease() {
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
   transition-property: all;
 }
 
-ul.nav {
-  li {
-    a {
-      text-transform: capitalize;
-    }
-  }
+.action-buttons .btn {
+  .transition-ease;
 }
 
 .wheel-container {
+  .transition-ease;
   width: 700px;
   height: 700px;
   overflow: hidden;
@@ -37,22 +38,29 @@ ul.nav {
   //}
 
   .wheel {
+    .transition-ease;
     position: relative;
     width: 700px;
     height: 700px;
+    left: 0;
+    top: 0;
 
     svg {
-      &.wheel-transition {
+      &.wheel-transition, &.ng-animate {
         transition: 5s cubic-bezier(0, .99, 1, 1) transform;
       }
     }
 
     &.zoom {
+      &-add {
+        .transition-ease;
+      }
 
+      position: relative;
       width: 2000px;
       height: 1400px;
-      left: -500px;
-      //top: 700px;
+      left: -700px;
+      top: 100px;
     }
   }
 }

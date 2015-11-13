@@ -1,10 +1,16 @@
 <section class="panel">
-    <div class="panel-body">
-        <button class="btn" ng-class="{'btn-default': !zoom, 'btn-success': zoom }" ng-click="zoom = !zoom">Zoom</button>
+    <div class="panel-body clearfix action-buttons">
+        <h4 class="pull-left" ng-show="participants.length">
+            Teilnehmer: {{ participants.length }} | Total: {{ total }}
+        </h4>
+        <div class="pull-right">
+            <button class="btn" ng-class="{'btn-default': !zoom, 'btn-success': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
+            <button class="btn btn-default" ng-click="resetRotation()">Reset</button>
+        </div>
     </div>
 </section>
-<div class="wheel-container transition-ease" hm-panend="panEnd($event)" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
-    <div class="wheel transition-ease" ng-class="{'zoom': zoom}">
+<div class="wheel-container" hm-panend="panEnd($event)" hm-recognizer-options="[{'type':'pan','directions':'DIRECTION_HORIZONTAL'}]" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
+    <div class="wheel" ng-class="{'zoom': zoom}">
         <!--<span class="wheel-participant">Alfred</span>-->
         <!--<span class="wheel-participant">Max</span>-->
         <!--<span class="wheel-participant">Hans</span>-->
