@@ -9,7 +9,7 @@ app.use('/angular.hammer.js', express['static'](__dirname + '/node_modules/angul
 app.use(less(__dirname + '/lib'));
 app.use('/', express['static'](__dirname + '/lib'));
 app.all('/*', function(req, res) {
-    res.sendfile(__dirname + '/lib/index.html');
+    res.sendFile(__dirname + '/lib/index.html');
 });
 
 app.listen('3001', function () {

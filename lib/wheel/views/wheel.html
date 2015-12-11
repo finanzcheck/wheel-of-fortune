@@ -4,18 +4,11 @@
             Teilnehmer: {{ participants.length }} | Total: {{ total }}
         </h4>
         <div class="pull-right">
-            <button class="btn" ng-class="{'btn-default': !zoom, 'btn-success': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
-            <button class="btn btn-default" ng-click="resetRotation()">Reset</button>
+            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom, 'btn-success': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
+            <button ng-disabled="disabled" class="btn btn-default" ng-click="resetRotation()">Reset</button>
         </div>
     </div>
 </section>
 <div class="wheel-container" hm-panend="panEnd($event)" hm-recognizer-options="[{'type':'pan','directions':'DIRECTION_HORIZONTAL'}]" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
-    <div class="wheel" ng-class="{'zoom': zoom}">
-        <!--<span class="wheel-participant">Alfred</span>-->
-        <!--<span class="wheel-participant">Max</span>-->
-        <!--<span class="wheel-participant">Hans</span>-->
-        <!--<span class="wheel-participant">Werner</span>-->
-        <!--<span class="wheel-participant">Brian</span>-->
-        <!--<span class="wheel-participant">Sven</span>-->
-    </div>
+    <div class="wheel" ng-class="{'zoom': zoom}"></div>
 </div>
