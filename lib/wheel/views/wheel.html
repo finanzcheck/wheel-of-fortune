@@ -1,14 +1,20 @@
-<section class="panel">
+<section class="panel ng-cloak">
     <div class="panel-body clearfix action-buttons">
         <h4 class="pull-left" ng-show="participants.length">
             Teilnehmer: {{ participants.length }} | Total: {{ total }}
         </h4>
         <div class="pull-right">
-            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom, 'btn-success': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
-            <button ng-disabled="disabled" class="btn btn-default" ng-click="resetRotation()">Reset</button>
+            <button ng-disabled="disabled || !!winner" class="btn btn-success" ng-click="tap()">Go!</button>
+            <button ng-disabled="disabled" class="btn btn-default" ng-click="resetRotation()">Reset Rotation</button>
+            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom, 'btn-primary': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
+            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom || !zoom2x, 'btn-primary': zoom && zoom2x }" ng-click="zoom2x = !zoom2x; zoom = true" id="button-zoom2x">Zoom 2x</button>
+            <button ng-disabled="!winner" class="btn" ng-class="{'btn-default': !winner, 'btn-success': !!winner }" ng-click="next()">Next</button>
         </div>
     </div>
 </section>
-<div class="wheel-container" hm-panend="panEnd($event)" hm-recognizer-options="[{'type':'pan','directions':'DIRECTION_HORIZONTAL'}]" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
-    <div class="wheel" ng-class="{'zoom': zoom}"></div>
+<div class="relative-wheel-container">
+    <div class="wheel-container" hm-panend="panEnd($event)" hm-recognizer-options="[{'type':'pan','directions':'DIRECTION_HORIZONTAL'}]" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
+        <div class="wheel" ng-class="{'zoom': zoom, 'zoom-2x': zoom && zoom2x}"></div>
+    </div>
+    <div class="line" ng-show="zoom"></div>
 </div>

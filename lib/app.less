@@ -24,12 +24,20 @@ body {
   .transition-ease;
 }
 
+.relative-wheel-container {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  overflow: hidden;
+}
+
 .wheel-container {
   .transition-ease;
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
   overflow: hidden;
   margin: 0 auto;
+  position: relative;
 
   //.marker {
   //  top: 10px;
@@ -40,8 +48,8 @@ body {
   .wheel {
     .transition-ease;
     position: relative;
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     left: 0;
     top: 0;
 
@@ -57,11 +65,45 @@ body {
       }
 
       position: relative;
-      width: 2000px;
-      height: 1400px;
-      left: -700px;
-      //top: 100px;
+      width: 2400px;
+      height: 1600px;
+      left: -800px;
+      top: -100px;
+
+
+      &-2x {
+        &-add {
+          .transition-ease;
+        }
+
+        position: relative;
+        width: 4000px;
+        height: 1600px;
+        left: -1600px;
+        top: -200px;
+      }
     }
   }
+}
+
+.line {
+  opacity: 1;
+
+  &.ng-hide {
+    opacity: 0;
+
+    &-add-active, &-remove-active {
+      .transition-ease;
+    }
+
+  }
+
+  position: relative;
+  float: left;
+  bottom: 600px;
+  left: 50%;
+  height: 600px;
+  width: 1px;
+  background-color: #000;
 }
 
