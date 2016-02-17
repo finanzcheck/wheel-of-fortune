@@ -1,5 +1,14 @@
 <section class="panel panel-participants">
+    <header class="panel-heading clearfix">
+        <button ng-click="clear()" class="btn btn-danger pull-right">Clear all</button>
+    </header>
     <div class="panel-body">
-        <div class="well">some test</div>
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="p in participants track by $index">
+                <span class="badge">{{ :: p.spokes}}</span>
+                {{ :: p.name }}
+            </div>
+            <div class="list-group-item list-group-item-info" ng-if="!participants.length">No participants.</div>
+        </div>
     </div>
 </section>
