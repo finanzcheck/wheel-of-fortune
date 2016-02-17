@@ -10,11 +10,16 @@
     <link rel="stylesheet" href="/app.css"/>
 </head>
 
-<body ng-app="wheelOfFortune" ng-cloak>
+<body ng-app="wheelOfFortune">
 <div class="container container-fluid">
     <div class="row">
         <div class="col-xs-12">
-            <div ui-view class="anim-in-out anim-slide-below-fade"></div>
+            <navigation></navigation>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div ui-view class=" anim-wrapper anim-in-out anim-fade" data-anim-speed="500"></div>
         </div>
     </div>
 </div>

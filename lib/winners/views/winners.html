@@ -1,8 +1,13 @@
-<section class="panel ng-cloak panel-winner">
+<section class="panel panel-winner">
+    <header class="panel-heading clearfix">
+        <button ng-click="clear()" class="btn btn-danger pull-right">Clear all</button>
+    </header>
     <div class="panel-body">
-        <div class="clearfix">
-            <a class="btn btn-default" ui-sref="wheel">&lt;&lt; Wheel</a>
-            <a class="btn btn-default" ui-sref="participants">&lt;&lt; Participants</a>
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="w in winners track by $index">
+                <span class="label label-success">{{ :: $index  + 1}}</span>&nbsp;{{ :: w.name  }}
+            </div>
+            <div class="list-group-item list-group-item-info" ng-if="!winners.length">No winners.</div>
         </div>
     </div>
 </section>
