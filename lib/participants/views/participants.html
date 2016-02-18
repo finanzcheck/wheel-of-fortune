@@ -1,11 +1,40 @@
 <section class="panel panel-participants">
     <header class="panel-heading clearfix">
         <button ng-click="clear()" class="btn btn-danger pull-right">Clear all</button>
+        <button ng-click="create()" class="btn btn-success pull-right">Add</button>
+
+        <sort-button order="order" value="name">Name</sort-button>
+        <sort-button order="order" value="spokes">Spokes</sort-button>
     </header>
     <div class="panel-body">
+
+        <form role="form" ng-submit="save()" ng-show="pEdit">
+            <div class="row">
+                <div class="col-md-6 col-xs-8">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="input-name" ng-model="pEdit.name" placeholder="Name" required ng-minlength="2" />
+                    </div>
+
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="spokes" id="input-spokes" ng-model="pEdit.spokes" placeholder="Spokes" required ng-minlength="1" />
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-6">
+                    <button class="btn btn-success btn-block" type="submit">Save</button>
+                </div>
+                <div class="col-md-2 col-xs-6">
+                    <button class="btn btn-danger btn-block" ng-click="pEdit = null">Cancel</button>
+                </div>
+            </div>
+        </form>
+
         <div class="list-group">
-            <div class="list-group-item" ng-repeat="p in participants track by $index">
-                <span class="badge">{{ :: p.spokes}}</span>
+            <div class="list-group-item" ng-repeat="p in participants | orderBy: order.order:order.reverse track by $id(p)">
+                <button class="btn btn-danger btn-xs" ng-click="remove(p)">Remove</button>
+                <button class="btn btn-default btn-xs" ng-click="edit(p)">Edit</button>
+                <span class="label label-success">{{ :: p.spokes }}</span>
                 {{ :: p.name }}
             </div>
             <div class="list-group-item list-group-item-info" ng-if="!participants.length">No participants.</div>
