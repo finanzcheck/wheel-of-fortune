@@ -9,12 +9,23 @@
   },
   "keywords": [
     "Angular",
+    "wheel of fortune",
     "wheel",
     "of",
     "fortune",
-    "hammerjs"
+    "hammerjs",
+    "election",
+    "lottery",
+    "raffle"
   ],
   "author": "Alexander Pinnecke <alexander.pinnecke@googlemail.com>",
+  "contributors": [
+    "Stefan Schult <stefan@schult.mobi>"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/finanzcheck/wheel-of-fortune.git"
+  },
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.7",
