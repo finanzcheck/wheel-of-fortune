@@ -8,15 +8,11 @@
     </header>
 </section>
 <div class="list-group participants">
-    <form class="list-group-item participant-new" novalidate role="form" ng-submit="save()" ng-show="pEdit">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" id="input-name" ng-model="pEdit.name" placeholder="Name" required ng-minlength="2"/>
-                </div>
-                <div class="form-group">
-                    <input type="number" min="1" class="form-control" name="spokes" id="input-spokes" ng-model="pEdit.spokes" placeholder="Spokes" required ng-minlength="1"/>
-                </div>
-                <button class="btn btn-success btn-block" type="submit">Save</button>
-                <button class="btn btn-danger btn-block" ng-click="pEdit = null">Cancel</button>
+    <form class="list-group-item participant participant-form" novalidate role="form" ng-submit="save()" ng-show="pEdit">
+        <input type="text" class="form-control" name="name" id="input-name" ng-model="pEdit.name" placeholder="Name" required ng-minlength="2"/>
+        <span class="participant__spoke"><input type="number" min="1" class="form-control" name="spokes" id="input-spokes" ng-model="pEdit.spokes" placeholder="Spokes" required ng-minlength="1"/></span>
+        <button class="btn btn-success" type="submit">Save</button>
+        <button class="btn btn-danger" ng-click="pEdit = null">Cancel</button>
     </form>
     <div class="list-group-item participant" ng-repeat="p in participants | orderBy: order.order:order.reverse track by $id(p)">
         <button class="btn btn-danger btn-xs" ng-click="remove(p)">Remove</button>

@@ -13,6 +13,17 @@
 
 @headings-color: #000;
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
@@ -196,19 +207,61 @@ wheel {
   }
 }
 
+.participant-form {
+  display: flex;
+  align-items: center;
+
+  .form-control {
+    flex: auto;
+    height: 2.125em;
+    padding: .375em .75em;
+    font-size: 1em;
+    margin-right: 1em;
+
+  }
+
+  .participant__spoke {
+    background-color: @label-info-bg;
+  }
+
+  .btn {
+    flex: none;
+    order: 10;
+    padding: .0625em .3125em;
+    font-size: .5em;
+  }
+}
+
 .participant__spoke {
   flex: none;
   width: 2em;
   height: 2em;
   margin-right: 1em;
+  padding: 0;
   font-size: 1.3em;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: .0 .625em solid @label-success-bg;
+  border: .0 .625em solid currentColor;
   border-radius: 2em;
   background: @label-success-bg;
   color: @label-color;
+  order: -1;
+
+  .form-control {
+    background: 0;
+    color: inherit;
+    font-size: 1em;
+    font-weight: inherit;
+    text-align: center;
+    border-radius: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .participant__name {
