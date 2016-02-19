@@ -1,5 +1,17 @@
-@import './../node_modules/bootstrap/less/bootstrap';
+@import './../node_modules/bootstrap/less/variables';
+@import './../node_modules/bootstrap/less/mixins';
+@import './../node_modules/bootstrap/less/normalize';
+@import './../node_modules/bootstrap/less/scaffolding';
+@import './../node_modules/bootstrap/less/type';
+@import './../node_modules/bootstrap/less/forms';
+@import './../node_modules/bootstrap/less/buttons';
+@import './../node_modules/bootstrap/less/list-group';
+@import './../node_modules/bootstrap/less/panels';
+@import './../node_modules/bootstrap/less/utilities';
+@import './../node_modules/bootstrap/less/responsive-utilities';
 @import (inline) './../node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css';
+
+@headings-color: #000;
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
@@ -7,7 +19,35 @@
 
 body {
   background-color: #333;
-  color: #fff;
+  height: 100vh;
+  width: 100vw;
+}
+
+navigation {
+  position: fixed;
+  bottom: 0;
+  z-index: 30;
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    margin: 0 3px;
+  }
+  a {
+    &:extend(.btn all);
+    &:extend(.btn-xs all);
+    &:extend(.btn-default all);
+    display: block;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &.active {
+      &:extend(.btn-primary all);
+    }
+  }
 }
 
 .panel-body {
@@ -16,8 +56,10 @@ body {
 
 .anim-wrapper {
   position: absolute;
-  left: 10%;
-  right: 10%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .transition-ease() {
@@ -30,37 +72,33 @@ body {
   .transition-ease;
 }
 
+.panel {
+  position: relative;
+  z-index: 20;
+  background-color: rgba(200, 200, 200, 0.4);
+  border-radius: 0;
+}
+
 wheel {
+  bottom: 0;
 
   .relative-wheel-container {
-    position: relative;
-    width: 800px;
-    height: 800px;
-    overflow: hidden;
-
 
     .wheel-container {
       .transition-ease;
-      width: 800px;
-      height: 800px;
-      overflow: hidden;
-      margin: 0 auto;
-      position: relative;
-
-      //.marker {
-      //  top: 10px;
-      //  left: 250px;
-      //  position: absolute;
-      //}
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       .wheel {
         .transition-ease;
-        position: relative;
-        width: 800px;
-        height: 800px;
-        left: 0;
-        top: 0;
-
+        height: 100%;
+        width: 100vh;
         svg {
           &.wheel-transition, &.ng-animate {
             transition: 5s cubic-bezier(0, .99, 1, 1) transform;
@@ -68,32 +106,21 @@ wheel {
         }
 
         &.zoom {
+          transform: scale(2.5) translateY(20vh);
           &-add {
             .transition-ease;
           }
 
-          position: relative;
-          width: 2400px;
-          height: 1600px;
-          left: -800px;
-          top: -100px;
-
-
           &-2x {
+            transform: scale(4) translateY(33vh);
             &-add {
               .transition-ease;
             }
 
-            position: relative;
-            width: 4000px;
-            height: 1600px;
-            left: -1600px;
-            top: -200px;
           }
         }
       }
     }
-
 
     .line {
       opacity: 1;
@@ -104,16 +131,28 @@ wheel {
         &-add-active, &-remove-active {
           .transition-ease;
         }
-
       }
 
-      position: relative;
-      float: left;
-      bottom: 600px;
-      left: 50%;
-      height: 600px;
+      position: absolute;
+      top: 0;
+      left: ~"calc(50vw - .5px)";
+      height: 50vh;
       width: 1px;
       background-color: #000;
+      &.zoom {
+        transform: translateY(10vh);
+        &-add {
+          .transition-ease;
+        }
+
+        &-2x {
+          transform: translateY(30vh);
+          &-add {
+            .transition-ease;
+          }
+
+        }
+      }
     }
   }
 
@@ -132,18 +171,56 @@ wheel {
       }
     }
   }
-  .list-group {
-    margin-top: 20px;
+}
 
-    .list-group-item {
-      & > .badge {
-        float: none;
-      }
+.participants {
+  max-width: 38em;
+  margin: 2em auto;
+  font-size: 3vmin;
+}
 
-      & > .btn {
-        float: right;
-        margin-left: 5px;
-      }
-    }
+.participant {
+  display: flex;
+  align-items: center;
+  padding: .625em .9375em;
+
+  .btn {
+    order: 10;
+    padding: .0625em .3125em;
+    font-size: .5em;
+
   }
+  .btn + .btn {
+    order: 9;
+    margin-right: .3125em;
+  }
+}
+
+.participant__spoke {
+  flex: none;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  font-size: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .0 .625em solid @label-success-bg;
+  border-radius: 2em;
+  background: @label-success-bg;
+  color: @label-color;
+}
+
+.participant__name {
+  flex: auto;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.winner__spoke {
+  background-color: @label-primary-bg;
+  border-color: @label-primary-bg;
 }

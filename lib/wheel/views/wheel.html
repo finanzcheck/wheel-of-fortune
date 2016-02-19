@@ -16,5 +16,5 @@
     <div class="wheel-container" hm-panend="panEnd($event)" hm-recognizer-options="[{'type':'pan','directions':'DIRECTION_HORIZONTAL'}]" hm-tap="tap($event)" ng-mouseenter="resetTextRotation()">
         <div class="wheel" ng-class="{'zoom': zoom, 'zoom-2x': zoom && zoom2x}"></div>
     </div>
-    <div class="line" ng-show="zoom"></div>
+    <div class="line"  ng-class="{'zoom': zoom, 'zoom-2x': zoom && zoom2x}" ng-show="zoom"></div>
 </div>

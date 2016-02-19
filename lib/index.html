@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Wheel of Fortune</title>
+    <head>
+        <title>Wheel of Fortune</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="/app.css"/>
-</head>
+        <link rel="stylesheet" href="/app.css"/>
+    </head>
 
-<body ng-app="wheelOfFortune">
-<div class="container container-fluid">
-    <div class="row">
-        <div class="col-xs-12">
-            <navigation></navigation>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div ui-view class=" anim-wrapper anim-in-out anim-fade" data-anim-speed="500"></div>
-        </div>
-    </div>
-</div>
+    <body ng-app="wheelOfFortune">
+        <navigation></navigation>
 
-<!--<script type="text/javascript" src="/hammer.js"></script>-->
-<script type="text/javascript" src="/app.js"></script>
-<!--<script type="text/javascript" src="/angular.hammer.js"></script>-->
-</body>
+        <div ui-view class=" anim-wrapper anim-in-out anim-fade" data-anim-speed="500"></div>
+
+        <!--<script type="text/javascript" src="/hammer.js"></script>-->
+        <script type="text/javascript" src="/app.js"></script>
+        <!--<script type="text/javascript" src="/angular.hammer.js"></script>-->
+    </body>
 </html>
