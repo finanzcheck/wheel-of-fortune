@@ -16,6 +16,6 @@ app.all('/:var(wheel|participants|winners)?', function(req, res) {
 });
 app.use('/', express['static'](__dirname + '/lib'));
 
-app.listen('3001', function () {
-    console.log('Listening on http://0.0.0.0:3001');
+app.listen('3010', function () {
+    console.log('Listening on http://0.0.0.0:3010');
 });
