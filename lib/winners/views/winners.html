@@ -1,6 +1,6 @@
 <section class="panel panel-winners">
     <header class="panel-heading clearfix">
-        <button ng-click="clear()" class="btn btn-danger pull-right">Clear all</button>
+        <button ng-click="clear()" class="btn btn-danger pull-right">{{ 'CLEAR_ALL' | translate }}</button>
     </header>
 </section>
 <div class="list-group participants">
@@ -8,5 +8,5 @@
         <strong class="participant__spoke winner__spoke">{{ :: $index  + 1}}</strong>
         <span class="participant__name">{{ :: w.name }}</span>
     </div>
-    <div class="list-group-item list-group-item-info" ng-if="!winners.length">No winners.</div>
+    <div class="list-group-item list-group-item-info" ng-if="!winners.length">{{ 'PAGES.WINNERS.EMPTY' | translate }}</div>
 </div>
