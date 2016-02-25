@@ -1,0 +1,36 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    z-index: 30;
+}
+
+.list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    list-style: none;
+    margin: 0 3px;
+}
+
+.link {
+    composes: btn from "../common/buttons.css";
+    composes: btn-xs from "../common/buttons.css";
+    composes: btn-default from "../common/buttons.css";
+    /*&: extend(.btn all);*/
+    /*&: extend(.btn-xs all);*/
+    /*&: extend(.btn-default all);*/
+    display: block;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+.active {
+    background: red;
+    /*composes: btn-primary from "../common/buttons.css";*/
+    /*&: extend(.btn-primary all);*/
+}
+
