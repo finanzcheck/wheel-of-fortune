@@ -5,6 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "echo todo: build:styles and build:scripts",
+    "build:styles": "echo todo: build css from less in dist, maybe later use css-modules instead auf sucking less",
+    "build:scripts": "echo todo: build js with browserify in dist",
+    "watch": "echo todo: watch file changes on lib/**/*",
+    "watch:styles": "echo todo: watch file changes on lib/**/*",
+    "watch:scripts": "echo todo: watch file changes on lib/**/*",
+    "clean": "echo todo: clean dist directory",
+    "copy": "echo todo: copy files like index.html to dist",
+    "serve": "echo todo: run browser-sync and watch dist directory",
+    "deploy": "echo todo: test, clean, build, copy then commit to gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,8 +33,8 @@
     "Stefan Schult <stefan@schult.mobi>"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/finanzcheck/wheel-of-fortune.git"
+    "type": "git",
+    "url": "https://github.com/finanzcheck/wheel-of-fortune.git"
   },
   "license": "ISC",
   "dependencies": {
@@ -38,6 +48,7 @@
     "angular-ui-router-anim-in-out": "^1.0.2",
     "array-shuffle": "^1.0.0",
     "bootstrap": "^3.3.5",
+    "browser-sync": "^2.11.1",
     "browserify": "^12.0.1",
     "browserify-middleware": "^7.0.0",
     "browserify-shim": "^3.8.11",
@@ -45,7 +56,9 @@
     "connect-slashes": "^1.3.1",
     "express": "^4.13.3",
     "hammerjs": "^2.0.4",
+    "less": "^2.6.0",
     "less-middleware": "^2.0.1",
-    "raphael": "^2.1.4"
+    "raphael": "^2.1.4",
+    "watchify": "^3.7.0"
   }
 }
