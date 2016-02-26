@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Wheel of fortune by finanzcheck</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Wheel of fortune</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/finanzcheck/wheel-of-fortune">View the Project on GitHub <small>finanzcheck/wheel-of-fortune</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/finanzcheck/wheel-of-fortune/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/finanzcheck/wheel-of-fortune/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/finanzcheck/wheel-of-fortune">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="wheel-of-fortune" class="anchor" href="#wheel-of-fortune" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Wheel of Fortune</h1>
+
+<p>Did you ever wanted to elect a winner through a raffle and needed a quick an simple app for that? This is one of them. A simple and lightweight angular app doing this very single thing.</p>
+
+<h2>
+<a id="how-does-it-work" class="anchor" href="#how-does-it-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How does it work?</h2>
+
+<p>In a simple CRUD list you manage the participants for the raffle. Each participant has an amount of spokes in the wheel, which can be seen as a winning chance. Then you turn the wheel and elect a winner, the winners are stored on the winner page. Both the winners and participants are stored in localstorage at the moment.</p>
+
+<p>For screenshots see <a href="#screenshots">Screenshots</a>.</p>
+
+<p>The size of a single participant's slice is calculated as <code>(360 / (total number of spokes)) * number of spokes</code>.</p>
+
+<p>To start the election, slide the wheel or press the Go button. <a href="http://hammerjs.github.io/">Hammer.JS</a> is used to handle the pan event and by is mobile friendly by  that. If using slide, the rotation is based on the distance on the X Axis, if pressing the Go button, a random integer between 0 and 360 is used to base the distance calculation on. For random integers, <a href="http://chancejs.com/">chance.js</a> is used.</p>
+
+<h2>
+<a id="setup--run" class="anchor" href="#setup--run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup &amp; Run</h2>
+
+<p>Use <code>git clone</code>, <code>npm install</code> or download the tarball from github to install it. Here, git clone will be used.</p>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/finanzcheck/wheel-of-fortune.git
+npm install
+npm start</pre></div>
+
+<p>Then open your browser and go to <code>http://localhost:3001</code>.</p>
+
+<h2>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h2>
+
+<h3>
+<a id="wheel" class="anchor" href="#wheel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Wheel</h3>
+
+<p><img src="/docs/screenshots/wheel.png?raw=true" alt="Wheel" title="Wheel"></p>
+
+<h3>
+<a id="wheel-hover" class="anchor" href="#wheel-hover" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Wheel Hover</h3>
+
+<p><img src="/docs/screenshots/wheel_hover.png?raw=true" alt="Wheel Hover" title="Wheel"></p>
+
+<h3>
+<a id="participants-list" class="anchor" href="#participants-list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Participants list</h3>
+
+<p><img src="/docs/screenshots/participants.png?raw=true" alt="Participants" title="Wheel"></p>
+
+<h3>
+<a id="winners-list" class="anchor" href="#winners-list" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Winners list</h3>
+
+<p><img src="/docs/screenshots/winners.png?raw=true" alt="Winners" title="Wheel"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/finanzcheck">finanzcheck</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
