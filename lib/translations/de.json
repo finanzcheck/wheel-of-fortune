@@ -1,0 +1,31 @@
+{
+  "WHEEL": "Glücksrad",
+  "PARTICIPANTS": "Teilnehmer",
+  "WINNERS": "Sieger",
+  "ADD": "Hinzufügen",
+  "CLEAR_ALL": "Alle löschen",
+  "SAVE": "Speichern",
+  "CANCEL": "Abbrechen",
+  "REMOVE": "Löschen",
+  "EDIT": "Bearbeiten",
+  "TOTAL": "Gesamt",
+  "PAGES": {
+    "PARTICIPANTS": {
+      "SORT_NAME": "Name",
+      "SORT_SPOKES": "Anzahl",
+      "PLACEHOLDER_NAME": "Name",
+      "PLACEHOLDER_SPOKES": "Anzahl",
+      "EMPTY": "Keine Teilnehmer."
+    },
+    "WHEEL": {
+      "RESET": "Zurücksetzen",
+      "ZOOM": "Zoom",
+      "ZOOM2": "Zoom 2x",
+      "NEXT": "Weiter",
+      "GO": "Start!"
+    },
+    "WINNERS": {
+      "EMPTY": "Keine Sieger."
+    }
+  }
+}

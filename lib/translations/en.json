@@ -1,0 +1,31 @@
+{
+  "WHEEL": "Wheel",
+  "PARTICIPANTS": "Participants",
+  "WINNERS": "Winners",
+  "ADD": "Add",
+  "CLEAR_ALL": "Clear all",
+  "SAVE": "Save",
+  "CANCEL": "Cancel",
+  "REMOVE": "Remove",
+  "EDIT": "Edit",
+  "TOTAL": "Total",
+  "PAGES": {
+    "PARTICIPANTS": {
+      "SORT_NAME": "Name",
+      "SORT_SPOKES": "Spokes",
+      "PLACEHOLDER_NAME": "Name",
+      "PLACEHOLDER_SPOKES": "Spokes",
+      "EMPTY": "No participants."
+    },
+    "WHEEL": {
+      "RESET": "Reset Rotation",
+      "ZOOM": "Zoom",
+      "ZOOM2": "Zoom 2x",
+      "NEXT": "Next",
+      "GO": "Go!"
+    },
+    "WINNERS": {
+      "EMPTY": "No winners."
+    }
+  }
+}

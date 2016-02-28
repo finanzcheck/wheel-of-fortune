@@ -11,7 +11,7 @@ app.use(less(__dirname + '/lib'));
 
 app.use(slashes(false));
 
-app.all('/:var(wheel|participants|winners)?', function(req, res) {
+app.all('/:var(wheel|participants|winners)?', function (req, res) {
     res.sendFile(__dirname + '/lib/index.html');
 });
 app.use('/', express['static'](__dirname + '/lib'));

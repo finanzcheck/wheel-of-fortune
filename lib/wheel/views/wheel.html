@@ -1,14 +1,14 @@
 <section class="panel ng-cloak">
     <div class="panel-body clearfix action-buttons">
         <h4 class="pull-left" ng-show="participants.length">
-            Participants: {{ participants.length }} | Total: {{ total }}
+            {{ 'PARTICIPANTS' | translate }}: {{ participants.length }} | {{ 'TOTAL' | translate }}: {{ total }}
         </h4>
         <div class="pull-right">
-            <button ng-disabled="disabled" class="btn btn-default" ng-click="resetRotation()">Reset Rotation</button>
-            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom, 'btn-primary': zoom }" ng-click="zoom = !zoom" id="button-zoom">Zoom</button>
-            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom || !zoom2x, 'btn-primary': zoom && zoom2x }" ng-click="zoom2x = !zoom2x; zoom = true" id="button-zoom2x">Zoom 2x</button>
-            <button ng-disabled="!winner" class="btn" ng-class="{'btn-default': !winner, 'btn-success': !!winner }" ng-click="next()">Next</button>
-            <button ng-disabled="disabled || !!winner" ng-class="{'btn-default': disabled || !!winner, 'btn-success': !(disabled || !!winner) }" class="btn" ng-click="tap()">Go!</button>
+            <button ng-disabled="disabled" class="btn btn-default" ng-click="resetRotation()">{{ 'PAGES.WHEEL.RESET' | translate }}</button>
+            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom, 'btn-primary': zoom }" ng-click="zoom = !zoom" id="button-zoom">{{ 'PAGES.WHEEL.ZOOM' | translate }}</button>
+            <button ng-disabled="disabled" class="btn" ng-class="{'btn-default': !zoom || !zoom2x, 'btn-primary': zoom && zoom2x }" ng-click="zoom2x = !zoom2x; zoom = true" id="button-zoom2x">{{ 'PAGES.WHEEL.ZOOM2' | translate }}</button>
+            <button ng-disabled="!winner" class="btn" ng-class="{'btn-default': !winner, 'btn-success': !!winner }" ng-click="next()">{{ 'PAGES.WHEEL.NEXT' | translate }}</button>
+            <button ng-disabled="disabled || !!winner" ng-class="{'btn-default': disabled || !!winner, 'btn-success': !(disabled || !!winner) }" class="btn" ng-click="tap()">{{ 'PAGES.WHEEL.GO' | translate }}</button>
         </div>
     </div>
 </section>
