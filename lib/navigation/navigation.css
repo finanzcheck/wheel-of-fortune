@@ -19,18 +19,13 @@
     composes: btn from "../common/buttons.css";
     composes: btn-xs from "../common/buttons.css";
     composes: btn-default from "../common/buttons.css";
-    /*&: extend(.btn all);*/
-    /*&: extend(.btn-xs all);*/
-    /*&: extend(.btn-default all);*/
     display: block;
+    background: greenyellow;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
 }
 
 .active {
-    background: red;
-    /*composes: btn-primary from "../common/buttons.css";*/
-    /*&: extend(.btn-primary all);*/
+    composes: btn-primary from "../common/buttons.css";
 }
 
