@@ -1,24 +1,24 @@
 <section class="panel panel-participants">
     <header class="panel-heading clearfix">
-        <button ng-click="clear()" class="btn btn-danger pull-right">Clear all</button>
-        <button ng-click="create()" class="btn btn-success pull-right">Add</button>
+        <button ng-click="clear()" class="btn btn-danger pull-right">{{ 'CLEAR_ALL' | translate }}</button>
+        <button ng-click="create()" class="btn btn-success pull-right">{{ 'ADD' | translate }}</button>
 
-        <sort-button order="order" value="name">Name</sort-button>
-        <sort-button order="order" value="spokes">Spokes</sort-button>
+        <sort-button order="order" value="name">{{ 'PAGES.PARTICIPANTS.SORT_NAME' | translate }}</sort-button>
+        <sort-button order="order" value="spokes">{{ 'PAGES.PARTICIPANTS.SORT_SPOKES' | translate }}</sort-button>
     </header>
 </section>
 <div class="list-group participants">
     <form class="list-group-item participant participant-form" novalidate role="form" ng-submit="save()" ng-show="pEdit">
-        <input type="text" class="form-control" name="name" id="input-name" ng-model="pEdit.name" placeholder="Name" required ng-minlength="2"/>
-        <span class="participant__spoke"><input type="number" min="1" class="form-control" name="spokes" id="input-spokes" ng-model="pEdit.spokes" placeholder="Spokes" required ng-minlength="1"/></span>
-        <button class="btn btn-success" type="submit">Save</button>
-        <button class="btn btn-danger" ng-click="pEdit = null">Cancel</button>
+        <input type="text" class="form-control" name="name" id="input-name" ng-model="pEdit.name" placeholder="{{ 'PAGES.PARTICIPANTS.PLACEHOLDER_NAME' | translate }}" required ng-minlength="2"/>
+        <span class="participant__spoke"><input type="number" min="1" class="form-control" name="spokes" id="input-spokes" ng-model="pEdit.spokes" placeholder="{{ 'PARTICIPANTS.PLACEHOLDER_SPOKES' | translate }}" required ng-minlength="1"/></span>
+        <button class="btn btn-success" type="submit">{{ 'SAVE' | translate }}</button>
+        <button class="btn btn-danger" ng-click="pEdit = null">{{ 'CANCEL' | translate }}</button>
     </form>
     <div class="list-group-item participant" ng-repeat="p in participants | orderBy: order.order:order.reverse track by $id(p)">
-        <button class="btn btn-danger btn-xs" ng-click="remove(p)">Remove</button>
-        <button class="btn btn-default btn-xs" ng-click="edit(p)">Edit</button>
+        <button class="btn btn-danger btn-xs" ng-click="remove(p)">{{ 'REMOVE' | translate }}</button>
+        <button class="btn btn-default btn-xs" ng-click="edit(p)">{{ 'EDIT' | translate }}</button>
         <strong class="participant__spoke">{{ :: p.spokes }}</strong>
         <span class="participant__name">{{ :: p.name }}</span>
     </div>
-    <div class="list-group-item list-group-item-info" ng-if="!participants.length">No participants.</div>
+    <div class="list-group-item list-group-item-info" ng-if="!participants.length">{{ 'PAGES.PARTICIPANTS.EMPTY' | translate }}</div>
 </div>
