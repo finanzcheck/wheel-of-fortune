@@ -1,6 +1,6 @@
 {
   "name": "wheel-of-fortune",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A wheel of Forune as simple angular app.",
   "main": "index.js",
   "scripts": {
