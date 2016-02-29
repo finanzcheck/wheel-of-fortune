@@ -47,6 +47,6 @@
     "express": "^4.13.3",
     "hammerjs": "^2.0.4",
     "less-middleware": "^2.0.1",
-    "raphael": "^2.1.4"
+    "raphael": "github:dmitrybaranovskiy/raphael#cca8f94"
   }
 }
