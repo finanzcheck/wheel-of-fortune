@@ -499,7 +499,7 @@ function WheelDirective(participantsService, winnersService, $timeout, $q, $loca
         function render() {
             participantsService.getAll().then(function (participants) {
                 if (!participants.length) {
-                    //$location.path('/participants');
+                    $location.path('/participants');
                 } else {
                     // we need to execute init() after an delay of 100ms, cause we need to wait for stateChange to complete
                     // transitioning to have the correct url in window.location for gradients to work correctly
@@ -67125,7 +67125,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
      #     <li>#••• — shortened HTML colour: (“<code>#000</code>”, “<code>#fc0</code>”, etc)</li>
      #     <li>#•••••• — full length HTML colour: (“<code>#000000</code>”, “<code>#bd2300</code>”)</li>
      #     <li>rgb(•••, •••, •••) — red, green and blue channels’ values: (“<code>rgb(200,&nbsp;100,&nbsp;0)</code>”)</li>
-     #     <li>rgb(•••%, •••%, •••%) ��� same as above, but in %: (“<code>rgb(100%,&nbsp;175%,&nbsp;0%)</code>”)</li>
+     #     <li>rgb(•••%, •••%, •••%) — same as above, but in %: (“<code>rgb(100%,&nbsp;175%,&nbsp;0%)</code>”)</li>
      #     <li>rgba(•••, •••, •••, •••) — red, green and blue channels’ values: (“<code>rgba(200,&nbsp;100,&nbsp;0, .5)</code>”)</li>
      #     <li>rgba(•••%, •••%, •••%, •••%) — same as above, but in %: (“<code>rgba(100%,&nbsp;175%,&nbsp;0%, 50%)</code>”)</li>
      #     <li>hsb(•••, •••, •••) — hue, saturation and brightness values: (“<code>hsb(0.5,&nbsp;0.25,&nbsp;1)</code>”)</li>
