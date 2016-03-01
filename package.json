@@ -2,9 +2,18 @@
   "name": "wheel-of-fortune",
   "version": "0.9.1",
   "description": "A wheel of Forune as simple angular app.",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run serve & npm run watch",
+    "serve": "npm run copy && browser-sync start --config bs-config.js",
+    "watch": "npm run watch:js & npm run watch:less",
+    "watch:less": "chokidar './lib/**/*.less' --initial -c 'npm run build:less > dist/app.css'",
+    "watch:js": "watchify lib/app.js --verbose -d -t [ browserify-ng-html2js --baseDir ./lib --requireAngular true ] -o dist/app.js",
+    "build": "npm run copy && npm run build:js && npm run build:css",
+    "build:js": "browserify -d -t [ browserify-ng-html2js --baseDir ./lib --requireAngular true ] lib/app.js | exorcist dist/app.js.map  > dist/app.js",
+    "build:less": "lessc --source-map-map-inline --source-map-rootpath=./ --source-map-basepath=$PWD lib/app.less",
+    "build:css": "npm run build:less | exorcist dist/app.css.map  > dist/app.css",
+    "copy": "mkdir -p ./dist && node ./scripts/copy.js",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -27,7 +36,8 @@
     "url": "https://github.com/finanzcheck/wheel-of-fortune.git"
   },
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "angular": "^1.4.7",
     "angular-animate": "^1.4.7",
     "angular-hammer": "apinnecke/angular-hammer",
@@ -39,14 +49,19 @@
     "angular-ui-router-anim-in-out": "^1.0.2",
     "array-shuffle": "^1.0.0",
     "bootstrap": "^3.3.5",
+    "browser-sync": "^2.11.1",
     "browserify": "^12.0.1",
-    "browserify-middleware": "^7.0.0",
+    "browserify-ng-html2js": "^1.2.0",
     "browserify-shim": "^3.8.11",
     "chance": "^1.0.0",
-    "connect-slashes": "^1.3.1",
-    "express": "^4.13.3",
+    "chokidar-cli": "^1.2.0",
+    "css-modulesify": "^0.19.0",
+    "exorcist": "^0.4.0",
+    "gh-pages": "^0.10.0",
+    "git-rev": "^0.2.1",
     "hammerjs": "^2.0.4",
-    "less-middleware": "^2.0.1",
-    "raphael": "github:dmitrybaranovskiy/raphael#cca8f94"
+    "less": "^2.6.0",
+    "raphael": "^2.1.4",
+    "watchify": "^3.7.0"
   }
 }
