@@ -1,5 +1,5 @@
 
-> wheel-of-fortune@1.0.0 build:less /Users/stefans/Projects/wheel-of-fortune
+> wheel-of-fortune@1.1.0 build:less /Users/stefans/Projects/wheel-of-fortune
 > lessc --source-map-map-inline --source-map-rootpath=./ --source-map-basepath=$PWD lib/app.less
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
