@@ -1,4 +1,6 @@
 # Wheel of Fortune
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/finanzcheck/wheel-of-fortune.svg)](https://greenkeeper.io/)
 Did you ever wanted to elect a winner through a raffle and needed a quick an simple app for that? This is one of them. A simple and lightweight angular app doing this very single thing.
 
 ## How does it work?
