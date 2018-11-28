@@ -880,6 +880,7 @@ ngModule.run(['$templateCache', function($templateCache) {
     '    <div class="list-group-item participant" ng-repeat="w in winners track by $index">\n' +
     '        <strong class="participant__spoke winner__spoke">{{ :: $index  + 1}}</strong>\n' +
     '        <span class="participant__name">{{ :: w.name }}</span>\n' +
+    '        <strong>{{ :: [\'800\',\'500\',\'200\',\'125\',\'50\',\'0\'][$index] }} €</strong>\n' +
     '    </div>\n' +
     '    <div class="list-group-item list-group-item-info" ng-if="!winners.length">{{ \'PAGES.WINNERS.EMPTY\' | translate }}</div>\n' +
     '</div>\n' +
