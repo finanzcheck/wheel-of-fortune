@@ -7,7 +7,7 @@
     <div class="list-group-item participant" ng-repeat="w in winners track by $index">
         <strong class="participant__spoke winner__spoke">{{ :: $index  + 1}}</strong>
         <span class="participant__name">{{ :: w.name }}</span>
-        <strong>{{ :: ['800','500','200','125','50','0'][$index] }} €</strong>
+        <strong>{{ :: ['50','125','200','500','800','0'][$index] }} €</strong>
     </div>
     <div class="list-group-item list-group-item-info" ng-if="!winners.length">{{ 'PAGES.WINNERS.EMPTY' | translate }}</div>
 </div>
