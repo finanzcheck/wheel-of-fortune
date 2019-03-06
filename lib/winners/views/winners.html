@@ -5,7 +5,7 @@
 </section>
 <div class="list-group participants">
     <div class="list-group-item participant" ng-repeat="w in winners track by $index">
-        <strong class="participant__spoke winner__spoke">{{ :: $index  + 1}}</strong>
+        <strong class="participant__spoke winner__spoke">{{ :: 5 - $index }}</strong>
         <span class="participant__name">{{ :: w.name }}</span>
         <strong>{{ :: ['50','125','200','500','800','0'][$index] }} €</strong>
     </div>
