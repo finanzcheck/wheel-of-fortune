@@ -1,0 +1,32 @@
+type: application
+owners:
+  - team.prism@finanzcheck.de
+product: None
+id: wheel-of-fortune
+vertical: finanzcheck
+availability: false
+confidentiality: company-internal
+integrity: false
+authenticity: false
+exposure: back-office finanzcheck
+lifecycle: maintenance
+name: Wheel of fortune
+description: |
+  Did you ever wanted to elect a winner through a raffle and needed a quick an simple app for that?
+  This is one of them. A simple and lightweight angular app doing this very single thing.
+links:
+  - type: repository
+    title: GitHub repository
+    address: https://github.com/finanzcheck/wheel-of-fortune
+platform: saas
+tags:
+  - Angular
+  - wheel of fortune
+  - wheel
+  - of
+  - fortune
+  - hammerjs
+  - election
+  - lottery
+  - raffle
+license: Proprietary
